@@ -22,7 +22,7 @@ $$
 $$
 
 $$
-\text{Macro-ECDM}_{\text{char}} = \frac{1}{N} \sum_{k=1}^N \text{ECDM}_{\text{char}}(\hat{s}_k, s_k) \times 100\,\%
+\text{Macro-ECDM}_{\text{char}} = \frac{1}{N} \sum_{k=1}^N \text{ECDM}_{\text{char}}(\hat{s}_k, s_k)
 $$
 
 где $D_L(\hat{s}, s)$ — расстояние Левенштейна между строками предсказания $\hat{s}$ и таргета $s$.
@@ -33,7 +33,7 @@ $$
 #### Exact Match (EM)
 
 $$
-\text{EM} = \frac{1}{N} \sum_{k=1}^N \mathbb{I}(\hat{s}_k = s_k) \times 100\,\%
+\text{EM} = \frac{1}{N} \sum_{k=1}^N \mathbb{I}(\hat{s}_k = s_k)
 $$
 
 - **Зачем введена**: Жесткий бенчмарк строгой посимвольной идентичности строк (12.81%).
@@ -42,7 +42,7 @@ $$
 #### Micro-CER (Character Error Rate)
 
 $$
-\text{Micro-CER} = \frac{\sum_{k=1}^N D_L(\hat{s}_k, s_k)}{\sum_{k=1}^N |s_k|} \times 100\,\%
+\text{Micro-CER} = \frac{\sum_{k=1}^N D_L(\hat{s}_k, s_k)}{\sum_{k=1}^N |s_k|}
 $$
 
 - **Зачем введена**: Отношение суммы всех посимвольных правок (вставки, удаления, замены) к суммарной длине таргетов датасета (28.63%).
@@ -50,7 +50,7 @@ $$
 #### Micro-TER (Token Error Rate)
 
 $$
-\text{Micro-TER} = \frac{\sum_{k=1}^N D_L(\text{tokens}(\hat{s}_k), \text{tokens}(s_k))}{\sum_{k=1}^N |\text{tokens}(s_k)|} \times 100\,\%
+\text{Micro-TER} = \frac{\sum_{k=1}^N D_L(\text{tokens}(\hat{s}_k), \text{tokens}(s_k))}{\sum_{k=1}^N |\text{tokens}(s_k)|}
 $$
 
 - **Зачем введена**: Оценивает расстояние Левенштейна на уровне неделимых токенов TeX (`\frac`, `\alpha`, `^`, `{`, `}`). Показывает долю ошибок в операторах и идентификаторах (31.40%).
